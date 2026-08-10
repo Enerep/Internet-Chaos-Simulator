@@ -16,7 +16,7 @@ The app immediately simulates:
 - affected services/population
 - cascading failures
 Example:
-Cut 3 cables near Singapore -> Southeast Asian traffic starts rerouting through Japan/Australia -> certain links turn red → latency jumps.
+Cut 3 cables near Singapore -> Southeast Asian traffic starts rerouting through Japan/Australia -> certain links turn red -> latency jumps.
 
 Maybe feature: a timeline slider showing the cascading failure over 30 seconds.
-Tech-wise: React/Next.js + Mapbox/Three.js + graph algorithms like Dijkstra/max-flow + real public cable/network datasets.
+Graph algorithms like Dijkstra/max-flow + real public cable/network datasets.
