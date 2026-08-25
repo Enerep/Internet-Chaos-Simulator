@@ -64,8 +64,7 @@ Run these from `web/`:
     ├── components/          # Simulator UI and MapLibre renderer
     ├── lib/                 # Domain model, demo topology, simulation engine
     ├── tests/               # Deterministic graph-engine tests
-    ├── public/              # Static assets
-    └── .openai/             # Sites hosting declaration
+    └── public/              # Static assets
 ```
 
 Read [ARCHITECTURE.md](./ARCHITECTURE.md) before changing the model. It explains why physical assets, logical routes, traffic demand, and presentation are kept separate.
@@ -103,12 +102,23 @@ Every normalized record should retain `source`, `sourceVersion`, `retrievedAt`, 
 5. Calibrate latency and capacity ranges and show uncertainty bands.
 6. Introduce optional AS-level routing policy.
 
-## What I need from you
+## Next steps
 
-Nothing is required to run this demo. Helpful product decisions for the next milestone are:
+The demo is ready to run. The next milestone depends on a few product decisions:
 
 - Whether the project must remain commercially usable; this changes which cable datasets are acceptable.
 - Whether realism or dramatic educational storytelling is the first priority.
 - Whether the next scenario should focus on a country outage, a cloud-region outage, or another cable chokepoint.
 
 No map API key, cloud account, database, Conda environment, or secret is required yet.
+
+## Deploy to Vercel
+
+The web application is standard Next.js and does not require a custom Vercel build configuration.
+
+1. Import this GitHub repository in Vercel.
+2. Set **Root Directory** to `web`.
+3. Keep the detected **Next.js** framework preset and default build settings.
+4. Deploy.
+
+Vercel provides the production hostname to the application automatically. Set `NEXT_PUBLIC_SITE_URL` only when you want social metadata to use a custom domain.

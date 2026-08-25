@@ -153,7 +153,7 @@ Python is appropriate for that offline work because GeoPandas and related GIS to
 
 ## Deployment
 
-The web application is a Vinext/Vite site targeting Cloudflare-compatible ESM through OpenAI Sites. It has no database, authentication, uploads, or server-owned state. Map controls and simulation state are device-local and ephemeral.
+The web application uses the standard Next.js App Router and can be deployed directly to Vercel. It has no database, authentication, uploads, or server-owned state. Map controls and simulation state are device-local and ephemeral.
 
 ## Testing strategy
 
