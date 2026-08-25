@@ -12,8 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const deploymentUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:3000');
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://internet-chaos-simulator.bato.chatgpt.site'),
+  metadataBase: new URL(deploymentUrl),
   title: 'Internet Chaos Simulator',
   description: 'Explore how internet traffic reroutes when critical infrastructure fails.',
   openGraph: {

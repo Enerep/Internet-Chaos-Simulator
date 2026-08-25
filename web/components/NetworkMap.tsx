@@ -2,6 +2,7 @@
 
 import * as maplibregl from 'maplibre-gl';
 import { useEffect, useMemo, useRef } from 'react';
+import type { FeatureCollection } from 'geojson';
 import type { NetworkModel, SimulationSnapshot } from '@/lib/model.ts';
 
 interface NetworkMapProps {
@@ -11,7 +12,7 @@ interface NetworkMapProps {
   showHubs: boolean;
 }
 
-function makeEdgeGeoJson(model: NetworkModel, snapshot: SimulationSnapshot): GeoJSON.FeatureCollection {
+function makeEdgeGeoJson(model: NetworkModel, snapshot: SimulationSnapshot): FeatureCollection {
   return {
     type: 'FeatureCollection',
     features: model.edges.map((edge) => {
@@ -86,7 +87,7 @@ export function NetworkMap({ model, snapshot, showTraffic, showHubs }: NetworkMa
         },
       });
 
-      const hubData: GeoJSON.FeatureCollection = {
+      const hubData: FeatureCollection = {
         type: 'FeatureCollection',
         features: model.nodes.map((node) => ({
           type: 'Feature',
