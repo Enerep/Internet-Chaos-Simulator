@@ -110,9 +110,7 @@ The demo is ready to run. The next milestone depends on a few product decisions:
 - Whether realism or dramatic educational storytelling is the first priority.
 - Whether the next scenario should focus on a country outage, a cloud-region outage, or another cable chokepoint.
 
-No map API key, cloud account, database, Conda environment, or secret is required yet.
-
-## Deploy to Vercel
+## Later(Deploy to Vercel)
 
 The web application is standard Next.js and does not require a custom Vercel build configuration.
 
